@@ -1,4 +1,7 @@
 // TODO: Declare Global variables
+var startButton = document.getElementById("start-button");
+var quizIntro = document.getElementById("quiz-intro");
+
 
 // TODO: Add timer function
 
@@ -57,7 +60,14 @@ var questions =  [
 ]
 
 // TODO: Define start quiz functions
+var startQuiz = function() {
+    
+    // remove the quiz intro along with the start button on click
+    quizIntro = quizIntro.remove();
 
     // start timer
+    console.log("start")
+};
 
 // Event Listeners
+startButton.addEventListener("click", startQuiz);
