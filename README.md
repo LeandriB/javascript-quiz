@@ -34,3 +34,5 @@ View a [live preview](https://leandrib.github.io/password-gen/) of my project.
 
 ## Attributions
 
+* [Countdown Timer](https://stackoverflow.com/questions/31106189/create-a-simple-10-second-countdown)
+* [Event Listeners](https://www.w3schools.com/js/js_htmldom_eventlistener.asp)

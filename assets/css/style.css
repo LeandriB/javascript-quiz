@@ -26,6 +26,10 @@ h1 {
     font-size: 18px;
 }
 
+div {
+    font-size: 15px;
+}
+
 .page-content {
     font-size: 15px;
     margin: 20px;

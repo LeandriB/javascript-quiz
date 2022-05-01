@@ -1,9 +1,7 @@
 // TODO: Declare Global variables
 var startButton = document.getElementById("start-button");
 var quizIntro = document.getElementById("quiz-intro");
-
-
-// TODO: Add timer function
+var seconds = 75;
 
 // Quiz questions
 var questions =  [
@@ -65,8 +63,24 @@ var startQuiz = function() {
     // remove the quiz intro along with the start button on click
     quizIntro = quizIntro.remove();
 
+    startTimer();
+
     // start timer
     console.log("start")
+};
+
+// TODO: Add timer function
+var startTimer = function(){
+
+    setInterval(function(){
+        if(seconds <= 0){
+        clearInterval(startTimer);
+        document.getElementById("countdown").innerHTML = "Finished";
+        } else {
+            document.getElementById("countdown").innerHTML = "TIME: " + seconds;
+        }
+        seconds -= 1;
+    }, 1000);
 };
 
 // Event Listeners
