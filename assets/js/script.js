@@ -14,7 +14,7 @@ var score = document.getElementById("score");
 var leaderboard = document.getElementById("leaderboard-container");
 var submitButton = document.getElementById("submit-button");
 var inputEl = document.getElementById("initials");
-var viewScores = document.querySelector("leaderboard");
+var viewScores = document.getElementById("leaderboard");
 
 // Global Reset variables
 var clearButton = document.getElementById("clear-button");
@@ -192,18 +192,17 @@ var saveScore = function(event) {
 
 // Display highscores
 var displayScores = function() {
-
-    //TODO: Sort scores
+    // Call sort score function
     var sort = sortScores();
 
     var scoreList = document.getElementById("highscores");
     scoreList.innerHTML = "";
     for (i = 0; i < sort.length; i++) {
         var scoreEntries = sort[i];
-        var scoreEl = document.createElement("li");
-        scoreList.textContent =
+        var scoreListEl = document.createElement("li");
+        scoreListEl.textContent = 
         scoreEntries.initials + " - " + scoreEntries.score;
-        scoreList.append(scoreEl);
+        scoreList.appendChild(scoreListEl);
     }
 }
 
@@ -224,12 +223,12 @@ var sortScores = function() {
 // Updates the leaderboard stored in local storage
 var updateScores = function(scoreInfo) {
     var scoreArray = getScores();
-    //append new score item
+    // Append new score item
     scoreArray.push(scoreInfo);
     localStorage.setItem("scoreArray", JSON.stringify(scoreArray));
 }
 
-//Retrieve scores from local storage and parse object using JSON.parse
+// Retrieve scores from local storage and parse object using JSON.parse
 var getScores = function() {
     var savedScores = localStorage.getItem("scoreArray");
     if (savedScores !== null) {
@@ -242,13 +241,13 @@ var getScores = function() {
 }
 
 // Reset functions
-//clear local storage and display empty leaderboard
+// Clear local storage and UI
 var clearScores = function() {
     localStorage.clear();
     displayScores();
 }
 
-//Hide leaderboard card show start card
+// Retake quiz
 var playAgain = function() {
     leaderboard.setAttribute("hidden", true);
     quizIntro.removeAttribute("hidden");
@@ -264,28 +263,21 @@ var playAgain = function() {
 }
 
 var showHighscores = function() {
-//   TODO: call hide element
-    scoreCard.removeAttribute("hidden");
+    quiz.setAttribute("hidden", true);
+    question.setAttribute("hidden", true);
+    scoreCard.setAttribute("hidden", true);
+    leaderboard.removeAttribute("hidden");
 
-        // //stop countdown
-        clearInterval(intervalID);
+    // Stop countdown
+    clearInterval(timerInterval);
 
   //assign undefined to time and display that, so that time does not appear on page
-    time = undefined;
+    time = 75;
     displayTime();
 
   // Display scores
     displayScores();
-}
-
-// Hide Elements
-var HideEl = function() {
-    quiz.setAttribute("hidden", true);
-    questionCard.setAttribute("hidden", true);
-    scoreCard.setAttribute("hidden", true);
-    leaderboardCard.setAttribute("hidden", true);
-}
-
+};
 
 // Event Listeners
 startButton.addEventListener("click", startQuiz);
@@ -293,4 +285,4 @@ answerOptions.addEventListener("click", checkAnswer);
 submitButton.addEventListener("click", saveScore);
 clearButton.addEventListener("click", clearScores);
 backButton.addEventListener("click", playAgain);
-// viewScores.addEventListener("click", showHighscores);
+viewScores.addEventListener("click", showHighscores);

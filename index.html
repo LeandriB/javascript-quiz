@@ -18,15 +18,15 @@
             </nav>
         </header>
         <main class="page-content">
-            <section id="quiz-container">
-                <div id="quiz-intro">
+            <section id="quiz-container" class="cards">
+                <div id="quiz-intro" class="card">
                     <h1>JavaScript Quiz<h1>
                     <p>Try to answer the following code-related questions within the time limit.
                         Keep in mind that incorrect answers will penalize your score/time by 10 seconds.
                     </p>
                     <button id="start-button" class="start-button">Start Quiz</button>
                 </div>
-                <div hidden id="question-container" class="questions">
+                <div hidden id="question-container" class="questions card">
                     <h2 class="question-txt"></h2>
                     <div id=answer-options>
                         <button id=answer-button0 class="answer-button"></button>
@@ -38,7 +38,7 @@
                         <p class="result-txt"></p>
                     </div>
                 </div>
-                <div hidden id=score-card>
+                <div hidden id=score-card class="card"> 
                     <h2>Quiz complete</h2>
                     <p>Your final score is <span id=score></span>.</p>
                     <form class="score-form" id="score-form">
@@ -48,7 +48,7 @@
                     </form>
                 </div>
         
-                <div hidden id=leaderboard-container>
+                <div hidden id=leaderboard-container class="card">
                     <h2>Highscores</h2>
                     <ol id="highscores">
                     </ol>

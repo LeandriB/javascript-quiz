@@ -46,6 +46,20 @@ div {
     padding: 20px;
 }
 
+.cards {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.card {
+    justify-content: center;
+}
+
+h1 {
+    align-items: center ;
+}
+
 
 button {
     margin-top: 10px;
