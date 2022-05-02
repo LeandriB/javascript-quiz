@@ -114,6 +114,7 @@ var checkAnswer = function(event) {
 var nextQuestion = function() {
 
     if(currentQuestion < questions.length) {
+        currentQuestion++;
         showQuestions();
     } else {
         stopQuiz();
