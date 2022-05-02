@@ -125,11 +125,17 @@ var checkAnswer = function(event) {
 
     if (userInput.textContent === questions[currentQuestion].correctAnswer) {
         resultText.textContent = "Correct";
+        setTimeout(() => {
+            result.style.display = "none";
+        }, 1000)
         // Display next question
         nextQuestion();
     } else if(userInput.textContent !== questions[currentQuestion].correctAnswer) {
         time = time - penalty;
         resultText.textContent = "Incorrect";
+        setTimeout(() => {
+            result.style.display = "none";
+        }, 1000)
         // Display next question
         nextQuestion();
     } else {
@@ -163,7 +169,6 @@ var startTimer = function(){
 // Display time on page
 var displayTime = function() {
     displayTimer.textContent = time;
-    console.log(time)
 }
 
 // End sequence for quiz
@@ -261,7 +266,7 @@ var playAgain = function() {
     quizIntro.removeAttribute("hidden");
 
     // Reset Timer
-    // time = 75;
+    time = 75;
     // displayTimer.innerHTML = "75"
     clearInterval(timerInterval);
 

@@ -4,8 +4,8 @@
 
 :root {
     --color: #83817fa8;
-    --accent: #566351;
-    --pink: #c1a7b3;
+    --accent: #89ef60;
+    --pink: #f94d9d;
     --light: #f7f7f7;
 }
 
@@ -13,14 +13,16 @@ body {
     background: #ededed;
     margin: 0;
     padding: 0;
+    display: flex;
     min-height: 100vh;
+    flex-direction: column;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-
 header {
-    padding: 30px 25px;
+    padding: 3vh;
     font-size: 18px;
+    background-color: #89ef60;
 }
 
 nav {
@@ -30,6 +32,12 @@ nav {
 
 nav a {
     text-decoration: none;
+}
+
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 h1 {
@@ -42,28 +50,44 @@ div {
 
 .page-content {
     font-size: 15px;
-    margin: 20px;
-    padding: 20px;
 }
 
 .cards {
     display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
+    width: 50%;
 }
 
 .card {
-    justify-content: center;
+    max-width: 80%;
+    margin-top: 15vh;
+    border: solid 2px rgb(199, 199, 199);
+    padding: 5vw;
+    border-radius: 10px;
+    align-items: center;
 }
 
-h1 {
-    align-items: center ;
+
+form {
+    display: flex;
+    align-items: flex-end;
+    flex-wrap: wrap;
+}
+
+form input {
+    outline: none;
+    border: none;
+    padding: 12px;
+    width: 100%;
+    font-size: 2.2rem;
+    border: 2px solid var(--grey);
+    border-radius: 12px;
 }
 
 
 button {
     margin-top: 10px;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
     font-size: 18px;
     width: 200px;
     padding: 12px;
