@@ -1,6 +1,6 @@
 # JavaScript Fundamentals Quiz
 
-The goal for this project is to build a to timed quiz on JavaScript fundamentals that store high scores. 
+The goal for this project is to build a to timed quiz on JavaScript fundamentals that store high score values. 
 
 ## Acceptance Criteria
 
@@ -39,4 +39,5 @@ View a [live preview](https://leandrib.github.io/javascript_quiz/) of my project
 * [Hidden Element](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/hidden)
 * [Simple quiz structure](https://simplestepscode.com/javascript-quiz-tutorial/)
 * [LocalStorage](https://www.w3schools.com/jsref/prop_win_localstorage.asp)
+* [Iterating over an array](https://www.geeksforgeeks.org/ways-iterating-array-javascript/)
 

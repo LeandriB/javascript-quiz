@@ -152,7 +152,7 @@ var nextQuestion = function() {
  //Countdown timer that executes when start button is clicked
 var startTimer = function(){
     timerInterval = setInterval(function() {
-        // time--;
+        time--;
         displayTime();
         if (time < 1) {
             stopQuiz();
@@ -261,8 +261,8 @@ var playAgain = function() {
     quizIntro.removeAttribute("hidden");
 
     // Reset Timer
-    time = 75;
-    displayTimer.innerHTML = "75"
+    // time = 75;
+    // displayTimer.innerHTML = "75"
     clearInterval(timerInterval);
 
     // Reset question index
