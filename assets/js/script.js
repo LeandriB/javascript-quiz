@@ -80,6 +80,14 @@ var questions =  [
     }
 ]
 
+// Hide select elements
+function hideEl() {
+    quizIntro.setAttribute("hidden", true);
+    question.setAttribute("hidden", true);
+    scoreCard.setAttribute("hidden", true);
+    leaderboard.setAttribute("hidden", true);
+}
+
 // Define start quiz functions
 var startQuiz = function() {
     
@@ -263,9 +271,7 @@ var playAgain = function() {
 }
 
 var showHighscores = function() {
-    quiz.setAttribute("hidden", true);
-    question.setAttribute("hidden", true);
-    scoreCard.setAttribute("hidden", true);
+    hideEl();
     leaderboard.removeAttribute("hidden");
 
     // Stop countdown
