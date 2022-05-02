@@ -6,12 +6,11 @@ var quiz = document.getElementById("quiz-container")
 var answerOptions = document.getElementById("answer-options")
 var result = document.getElementById("result");
 var resultText = document.querySelector(".result-txt");
-var seconds = 75;
 
 var currentQuestion = 0;
-// var questionDiv = document.createElement("div");
-
-// var answerDiv= document.createElement("div")
+var time = 75;
+var timerInterval;
+var displayTimer = document.getElementById("timer");
 
 // Quiz questions
 var questions =  [
@@ -77,25 +76,11 @@ var startQuiz = function() {
     // Render question
     showQuestions();
     // Call startTimer function on button click
-    //startTimer();
+    startTimer();
 
 };
 
-//  Countdown timer that executes when start button is clicked
-// var startTimer = function(){
-
-//     setInterval(function(){
-//         if(seconds <= 0){
-//         clearInterval(startTimer);
-//         document.getElementById("countdown").innerHTML = "Sorry, time's up";
-//         } else {
-//             document.getElementById("countdown").innerHTML = "TIME: " + seconds;
-//         }
-//         seconds -= 1;
-//     }, 1000);
-// };
-
-// render questions on page
+// Render questions on page
 var showQuestions = function() {
 
     var question = questions[currentQuestion];
@@ -112,7 +97,7 @@ var showQuestions = function() {
 }
 
 // Check answer against user input
-function checkAnswer(event) {
+var checkAnswer = function(event) {
     var userInput = event.target;
     result.style.display = "block";
 
@@ -121,7 +106,42 @@ function checkAnswer(event) {
     } else {
         resultText.textContent = "Incorrect";
     }
+    // Display next question
+    nextQuestion();
 };
+
+// Next question handler function
+var nextQuestion = function() {
+
+    if(currentQuestion < questions.length) {
+        showQuestions();
+    } else {
+        stopQuiz();
+    }
+};
+
+ //Countdown timer that executes when start button is clicked
+var startTimer = function(){
+    timerInterval = setInterval(function() {
+        time--;
+        displayTime();
+        if (time < 1) {
+            stopQuiz();
+        }
+    }, 1000)
+};
+
+
+// Display time on page
+var displayTime = function() {
+    displayTimer.textContent = time;
+    console.log(time)
+}
+
+// End sequence for quiz
+var stopQuiz = function () {
+    clearInterval(timerInterval);
+}
 
 
 // Event Listeners
