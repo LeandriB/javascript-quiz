@@ -1,14 +1,21 @@
-// TODO: Declare Global variables
+// Declare Global variables
+var currentQuestion = 0;
 var question = document.getElementById("question-container");
 var startButton = document.getElementById("start-button");
 var quizIntro = document.getElementById("quiz-intro");
-var quiz = document.getElementById("quiz-container")
-var answerOptions = document.getElementById("answer-options")
+var quiz = document.getElementById("quiz-container");
+var answerOptions = document.getElementById("answer-options");
 var result = document.getElementById("result");
 var resultText = document.querySelector(".result-txt");
 
-var currentQuestion = 0;
+// Global score variables
+var scoreCard = document.getElementById("score-card");
+var score = document.getElementById("score");
+var leaderboard = document.getElementById("leaderboard-container");
+
+// Global timer variables
 var time = 75;
+var penalty = 10;
 var timerInterval;
 var displayTimer = document.getElementById("timer");
 
@@ -103,18 +110,24 @@ var checkAnswer = function(event) {
 
     if (userInput.textContent === questions[currentQuestion].correctAnswer) {
         resultText.textContent = "Correct";
-    } else {
+        // Display next question
+        nextQuestion();
+    } else if(userInput.textContent !== questions[currentQuestion].correctAnswer) {
+        time = time - penalty;
         resultText.textContent = "Incorrect";
+        // Display next question
+        nextQuestion();
+    } else {
+        stopQuiz();
     }
-    // Display next question
-    nextQuestion();
 };
 
 // Next question handler function
 var nextQuestion = function() {
 
+    currentQuestion++;
+
     if(currentQuestion < questions.length) {
-        currentQuestion++;
         showQuestions();
     } else {
         stopQuiz();
@@ -132,7 +145,6 @@ var startTimer = function(){
     }, 1000)
 };
 
-
 // Display time on page
 var displayTime = function() {
     displayTimer.textContent = time;
@@ -142,6 +154,9 @@ var displayTime = function() {
 // End sequence for quiz
 var stopQuiz = function () {
     clearInterval(timerInterval);
+    question.setAttribute("hidden", true)
+    scoreCard.removeAttribute("hidden");
+    score.textContent = time;
 }
 
 

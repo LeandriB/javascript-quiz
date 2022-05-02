@@ -38,6 +38,25 @@
                         <p class="result-txt"></p>
                     </div>
                 </div>
+                <div hidden id=score-card>
+                    <h2>Quiz complete</h2>
+                    <p>Your final score is <span id=score></span>.</p>
+                    <form class="score-form" id="score-form">
+                        <label for="initials">Enter initials: </label>
+                        <input type="text" id="initials">
+                        <button id="submit-button">Submit</button>
+                    </form>
+                </div>
+        
+                <div hidden id=leaderboard-container>
+                    <h2>Highscores</h2>
+                    <ol id="highscores">
+                    </ol>
+                    <div>
+                        <button id="back-button">Go Back</button>
+                        <button id="clear-button">Clear Highscores</button>
+                    </div>
+                </div>
             </section>
         </main>
         <script src="./assets/js/script.js"></script>
