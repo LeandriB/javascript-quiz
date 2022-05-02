@@ -17,6 +17,10 @@ body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+main {
+    display: flex;
+}
+
 header {
     padding: 30px 25px;
     font-size: 18px;
