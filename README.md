@@ -30,7 +30,9 @@ View a [live preview](https://leandrib.github.io/javascript_quiz/) of my project
 
 ## Screenshot
 
-![Portfolio](./assets/images/taskinator.png)
+![Portfolio-image1](./assets/images/quiz1.png)
+![Portfolio-image2](./assets/images/quiz2.png)
+![Portfolio-image3](./assets/images/quiz3.png)
 
 ## Attributions
 
