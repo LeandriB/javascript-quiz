@@ -17,13 +17,19 @@ body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-main {
-    display: flex;
-}
 
 header {
     padding: 30px 25px;
     font-size: 18px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+nav a {
+    text-decoration: none;
 }
 
 h1 {
@@ -39,6 +45,7 @@ div {
     margin: 20px;
     padding: 20px;
 }
+
 
 button {
     margin-top: 10px;

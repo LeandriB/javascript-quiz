@@ -245,8 +245,7 @@ var getScores = function() {
 //clear local storage and display empty leaderboard
 var clearScores = function() {
     localStorage.clear();
-    // TODO: clear from UI
-    getScores();
+    displayScores();
 }
 
 //Hide leaderboard card show start card

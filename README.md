@@ -26,7 +26,7 @@ OR
 
 ## Live Preview
 
-View a [live preview](https://leandrib.github.io/password-gen/) of my project.
+View a [live preview](https://leandrib.github.io/javascript_quiz/) of my project.
 
 ## Screenshot
 
@@ -37,4 +37,6 @@ View a [live preview](https://leandrib.github.io/password-gen/) of my project.
 * [Countdown Timer](https://stackoverflow.com/questions/31106189/create-a-simple-10-second-countdown)
 * [Event Listeners](https://www.w3schools.com/js/js_htmldom_eventlistener.asp)
 * [Hidden Element](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/hidden)
+* [Simple quiz structure](https://simplestepscode.com/javascript-quiz-tutorial/)
+* [LocalStorage](https://www.w3schools.com/jsref/prop_win_localstorage.asp)
 
